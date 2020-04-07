@@ -4,6 +4,8 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+//note4oss:5 创建常量类ConstantPropertiesUtils.java，用于读取配置文件里的内容
+//note4properties:
 //当项目已启动，spring接口，spring加载之后，执行接口一个方法
 @Component
 public class ConstantPropertiesUtils implements InitializingBean {

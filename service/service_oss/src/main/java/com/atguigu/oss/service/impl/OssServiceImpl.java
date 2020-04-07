@@ -40,6 +40,9 @@ public class OssServiceImpl implements OssService {
             fileName = uuid+fileName;
 
             //2 把文件按照日期进行分类
+            //note4date:获取当前日期，按照指定格式格式化
+            //1 引入工具类依赖
+            //2 使用 new DateTime().toString("yyyy/MM/dd");
             //获取当前日期
             //   2019/11/12
             String datePath = new DateTime().toString("yyyy/MM/dd");
