@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 public class SubjectData {
-    @ExcelProperty(index = 0)
+    @ExcelProperty(index = 0) //表示第一列
     private String oneSubjectName;
-    @ExcelProperty(index = 1)
+    @ExcelProperty(index = 1) //表示第二列
     private String twoSubjectName;
 }

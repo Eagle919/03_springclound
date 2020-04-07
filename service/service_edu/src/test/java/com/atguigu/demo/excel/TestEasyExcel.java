@@ -8,15 +8,15 @@ import java.util.List;
 public class TestEasyExcel {
 
     public static void main(String[] args) {
-        //实现excel写的操作
-        //1 设置写入文件夹地址和excel文件名称
+//        实现excel写的操作
+//        1 设置写入文件夹地址和excel文件名称
 //        String filename = "F:\\write.xlsx";
-        //2 调用easyexcel里面的方法实现写操作
-        //write方法两个参数：第一个参数文件路径名称，第二个参数实体类class
+//        //2 调用easyexcel里面的方法实现写操作
+//        write方法两个参数：第一个参数文件路径名称，第二个参数实体类class
 //        EasyExcel.write(filename,DemoData.class).sheet("学生列表").doWrite(getData());
 
 
-        //实现excel读操作
+        //实现excel读操作 需要建立一个监听器类
         String filename = "F:\\write.xlsx";
         EasyExcel.read(filename,DemoData.class,new ExcelListener()).sheet().doRead();
     }

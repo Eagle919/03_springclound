@@ -99,6 +99,7 @@
         </dependency>
 
         <!--xls-->
+        <!--note4easyExcel: 1 b 引入poi依赖，因为easyExcel是对poi的封装 版本要对应-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
