@@ -63,6 +63,7 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
 
         //登录成功
         //生成token字符串，使用jwt工具类
+        //note4jwt: 3 调用JwtUtils的登录方法
         String jwtToken = JwtUtils.getJwtToken(mobileMember.getId(), mobileMember.getNickname());
         return jwtToken;
     }

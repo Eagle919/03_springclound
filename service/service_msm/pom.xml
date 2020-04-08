@@ -12,6 +12,9 @@
     <artifactId>service_msm</artifactId>
 
     <dependencies>
+        <!--note4msm:阿里云短信服务使用-->
+        <!--1 引入依赖 fastjson   aliyun-java-sdk-core-->
+        <!--2 调用方法发送短信 com.atguigu.msmservice.service.impl.MsmServiceImpl.send-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>

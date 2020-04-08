@@ -13,6 +13,10 @@
 
     <dependencies>
         <!-- JWT-->
+        <!--note4jwt:单点登录-->
+        <!--1 引入jjwt依赖-->
+        <!--2 复制JwtUtils-->
+        <!--3 调用JwtUtils的登录方法-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

@@ -40,8 +40,8 @@ public class MsmController {
         boolean isSend = msmService.send(param,phone);
         if(isSend) {
             //发送成功，把发送成功验证码放到redis里面
-            //设置有效时间
-            redisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);
+            //note4redis:设置有效时间
+            redisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);//5分钟有效
             return R.ok();
         } else {
             return R.error().message("短信发送失败");

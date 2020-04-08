@@ -36,7 +36,7 @@ public class UcenterMemberController {
         //调用service方法实现登录
         //返回token值，使用jwt生成
         String token = memberService.login(member);
-        return R.ok().data("token",token);
+        return R.ok().data("token", token);
     }
 
     //注册
@@ -53,16 +53,17 @@ public class UcenterMemberController {
         String memberId = JwtUtils.getMemberIdByJwtToken(request);
         //查询数据库根据用户id获取用户信息
         UcenterMember member = memberService.getById(memberId);
-        return R.ok().data("userInfo",member);
+        return R.ok().data("userInfo", member);
     }
 
+    //note4jwt:
     //根据用户id获取用户信息
     @PostMapping("getUserInfoOrder/{id}")
     public UcenterMemberOrder getUserInfoOrder(@PathVariable String id) {
         UcenterMember member = memberService.getById(id);
         //把member对象里面值复制给UcenterMemberOrder对象
         UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
-        BeanUtils.copyProperties(member,ucenterMemberOrder);
+        BeanUtils.copyProperties(member, ucenterMemberOrder);
         return ucenterMemberOrder;
     }
 
@@ -70,7 +71,7 @@ public class UcenterMemberController {
     @GetMapping("countRegister/{day}")
     public R countRegister(@PathVariable String day) {
         Integer count = memberService.countRegisterDay(day);
-        return R.ok().data("countRegister",count);
+        return R.ok().data("countRegister", count);
     }
 }
 

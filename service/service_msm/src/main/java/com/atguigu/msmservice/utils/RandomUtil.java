@@ -30,9 +30,6 @@ public class RandomUtil {
 
 	/**
 	 * 给定数组，抽取n个数据
-	 * @param list
-	 * @param n
-	 * @return
 	 */
 	public static ArrayList getRandom(List list, int n) {
 
