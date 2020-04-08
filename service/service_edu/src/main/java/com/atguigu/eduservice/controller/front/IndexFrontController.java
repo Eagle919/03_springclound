@@ -30,6 +30,7 @@ public class IndexFrontController {
     public R index() {
         //查询前8条热门课程
         QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
+        //note4queryWrapper:通过id倒序只要8条记录
         wrapper.orderByDesc("id");
         wrapper.last("limit 8");
         List<EduCourse> eduList = courseService.list(wrapper);
@@ -40,7 +41,7 @@ public class IndexFrontController {
         wrapperTeacher.last("limit 4");
         List<EduTeacher> teacherList = teacherService.list(wrapperTeacher);
 
-        return R.ok().data("eduList",eduList).data("teacherList",teacherList);
+        return R.ok().data("eduList", eduList).data("teacherList", teacherList);
     }
 
 }

@@ -21,8 +21,9 @@ import java.util.List;
 @Service
 public class CrmBannerServiceImpl extends ServiceImpl<CrmBannerMapper, CrmBanner> implements CrmBannerService {
 
-    //查询所有banner
-   // @Cacheable(value = "banner",key = "'selectIndexList'")
+    //note4redis: 4 在查询所有幻灯片的方法上添加缓存的注解:@Cacheable,功能是:该接口先去查redis,有数据直接返回没数据先查库在添加到redis再从redis返回数据
+    // 查询所有banner
+    @Cacheable(value = "banner",key = "'selectIndexList'")
     @Override
     public List<CrmBanner> selectAllBanner() {
 

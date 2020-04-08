@@ -12,6 +12,8 @@
     <artifactId>service_vod</artifactId>
 
     <dependencies>
+
+        <!--note4vod: 1 引入依赖-->
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>

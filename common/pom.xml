@@ -21,21 +21,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
 
         <!--mybatis-plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
 
         <!--lombok用来简化实体类：需要安装lombok插件-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
 
         <!--note4Swagger:2.1 start-->
@@ -43,16 +43,24 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
         <!--note4Swagger:2.1 end-->
 
         <!-- redis -->
+        <!--note4redis:缓存首页等频繁查询的数据-->
+        <!--使用步骤-->
+        <!--1 导入spring-boot-starter-data-redis  及 commons-pool2连接池依赖-->
+        <!--2 创建固定的配置类 com.atguigu.servicebase.RedisConfig 并开启缓存功能继承CachingConfigurerSupport类-->
+        <!--3 在需要使用redis的模块中引入redis所在的模块-->
+        <!--4 在查询所有幻灯片的方法上添加缓存的注解:@Cacheable,功能是:该接口先去查redis,有数据直接返回没数据先查库在添加到redis再从redis返回数据-->
+        <!--5 启动redis服务-->
+        <!--6 在需要缓存是模块配置redis地址-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>

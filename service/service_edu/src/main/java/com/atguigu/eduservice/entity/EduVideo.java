@@ -34,7 +34,7 @@ public class EduVideo implements Serializable {
 
     @ApiModelProperty(value = "视频ID")
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
-    //note01:mybatisPlus
+    //note4mp:mybatisPlus
     //type = IdType.ID_WORKER:mp自带策略，生成19位值，属性是字符串类型用这种类型  常用
     //type = IdType.ID_WORKER:mp自带策略，生成19位值，属性是数字类型用这种类型    常用
     //type = IdType.IdType.AUTO:自动增长                                        常用

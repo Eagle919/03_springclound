@@ -69,7 +69,8 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
 //            oneSubject.setId(eduSubject.getId());
 //            oneSubject.setTitle(eduSubject.getTitle());
             //eduSubject值复制到对应oneSubject对象里面
-            BeanUtils.copyProperties(eduSubject,oneSubject);
+            //使用 org.springframework.beans.BeanUtils类可以实现属性赋值
+            BeanUtils.copyProperties(eduSubject,oneSubject); //将eduSubject的值get出来再set到oneSubject里
             //多个OneSubject放到finalSubjectList里面
             finalSubjectList.add(oneSubject);
 

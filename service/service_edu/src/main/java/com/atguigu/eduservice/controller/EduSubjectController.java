@@ -57,6 +57,15 @@ public class EduSubjectController {
         return R.ok();
     }
 
+    /**
+     * note4tree:将分类列表做成树状图显示，根据json返回指定格式的数据书写流程
+     * 1 根据前端框架需要的格式构建接口返回指定格式的数据
+     * 2 分析数据格式
+     * 3 创建一级分类 com/atguigu/eduservice/entity/subject/OneSubject.java
+     * 和  二级分类 com.atguigu.eduservice.entity.subject.TwoSubject实体类
+     * 4 在两个实体类中表示他们之间的关系  一个一级分类有多个二级分类
+     * 5 书写代码封装 com.atguigu.eduservice.service.impl.EduSubjectServiceImpl#getAllOneTwoSubject()
+     */
     //课程分类列表（树形）
     @GetMapping("getAllSubject")
     public R getAllSubject() {

@@ -26,6 +26,7 @@ public class EduVideoController {
     @Autowired
     private EduVideoService videoService;
 
+    //note4feign:4 注入VodClient 并调用相应方法实现逻辑
     //注入vodClient
     @Autowired
     private VodClient vodClient;

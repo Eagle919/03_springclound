@@ -9,7 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "service-vod",fallback = VodFileDegradeFeignClient.class) //调用的服务名称
+/**
+ * note4feign:微服务调用流程
+ * 1 maven引入服务调用依赖
+ * 2 启动类启用服务调用功能 EnableFeignClients
+ * 3 在调用端创建interface，使用注解指定调用红服务名称，定义调用方法的路径
+ * 4 注入VodClient 并调用相应方法实现逻辑
+ * <p>
+ * note4hystrix:4 指定实现类的调用失败class fallback = VodFileDegradeFeignClient.class
+ */
+@FeignClient(name = "service-vod", fallback = VodFileDegradeFeignClient.class) //调用的服务名称
 @Component
 public interface VodClient {
 

@@ -38,16 +38,29 @@
         </dependency>
 
         <!--hystrix依赖，主要是用  @HystrixCommand -->
+        <!--note4hystrix:熔断器-->
+        <!--使用步骤-->
+        <!--1 引入 ribbon 及hystrix依赖-->
+        <!--2 在配置文件里加上熔断器hystrix配置,开启熔断机制-->
+        <!--3 新建一个类去实现生产者的方法-->
+        <!--4 指定实现类的调用失败class-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
-        <!--服务注册-->
+        <!--note4nacos:服务注册-->
+        <!--服务注册步骤-->
+        <!--1 启动nacos-->
+        <!--2 在需要服务注册的模块引入maven依赖-->
+        <!--3 在配置文件中进行服务注册的配置-->
+        <!--4 在启动类上加个开启启用服务注册功能的注解 @EnableDiscoveryClient-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
+        <!--note4feign:1 maven引入服务调用依赖-->
         <!--服务调用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -71,7 +84,7 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!--note01:Mybatis Plus 代码生成器-->
+        <!--note4mp:Mybatis Plus 代码生成器-->
         <!--使用步骤-->
         <!--第一步：在pom文件里导入如下velocity 模板引擎-->
         <!--第三步：在测试包下面将固定的类，然后填写相关信息后运行即可，不需要部署所以放测试包里-->
@@ -139,10 +152,13 @@
     </dependencies>
 
     <build>
+        <!--note4mp:方案三(推荐):1 在pom文件中配置xml文件位置-->
         <resources>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
+                    <!--**:表示多层目录-->
+                    <!--* :表示一层目录-->
                     <include>**/*.xml</include>
                 </includes>
                 <filtering>false</filtering>

@@ -15,7 +15,7 @@ import org.junit.Test;
  * @author
  * @since 2018/12/13
  */
-//note01:<!--第三步：在测试包下面将固定的类，然后填写相关信息后运行即可，不需要部署所以放测试包里-->
+//note4mp:<!--第三步：在测试包下面将固定的类，然后填写相关信息后运行即可，不需要部署所以放测试包里-->
 public class CodeGenerator {
 
     @Test
