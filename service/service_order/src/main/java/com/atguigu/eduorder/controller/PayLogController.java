@@ -16,15 +16,24 @@ import java.util.Map;
  * @author testjava
  * @since 2020-03-13
  */
+
+/**
+ * note4wechatPay:微信支付-扫码支付
+ * 1 生成支付二维码
+ */
 @RestController
 @RequestMapping("/eduorder/paylog")
 @CrossOrigin
 public class PayLogController {
 
-    @Autowired
-    private PayLogService payLogService;
+    private final PayLogService payLogService;
 
-    //生成微信支付二维码接口
+    @Autowired
+    public PayLogController(PayLogService payLogService) {
+        this.payLogService = payLogService;
+    }
+
+    //note4wechatPay:生成微信支付二维码接口
     //参数是订单号
     @GetMapping("createNative/{orderNo}")
     public R createNative(@PathVariable String orderNo) {

@@ -10,7 +10,7 @@ import org.springframework.web.util.pattern.PathPatternParser;
 
 /**
  * <p>
- * 处理跨域
+ * note4note4跨域:处理跨域 注意：若是网关处理了跨域那么在其他微服务就不能再加解决跨域的注解了否则会有问题
  * </p>
  *
  * @author qy

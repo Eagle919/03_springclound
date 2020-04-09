@@ -12,6 +12,10 @@
     <artifactId>service_acl</artifactId>
 
     <dependencies>
+        <!--note4权限-->
+        <!--1 引入相关依赖-->
+        <!--2 复制相关代码 及配置文件-->
+        <!--3 创建spring_security模块并复制相关代码到里面-->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>spring_security</artifactId>

@@ -33,6 +33,22 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
+        <!--note4canal:数据库同步工具-->
+        <!--应用场景 可以将远程数据库数据同步到本地数据库-->
+        <!--只支持mysql-->
+        <!--使用-->
+        <!--1.准备工作 在linux系统里装mysql及canal 并创建一样的数据库表 及本地安装mysql-->
+        <!--2.效果 在linux添加数据时Windows也添加修改也修改-->
+        <!--3.怎么做-->
+        <!--3.1 linux的mysql-->
+        <!--3.1.1启动数据库服务 - 开启binlog（先检查) : vi /etc/my.cnf 改配置 追加内容三个  -重启一下服务-->
+        <!--3.1.2 开启远程访问权限-->
+        <!--3.2安装canal-->
+        <!--3.2.1更改配置文件-->
+        <!--3.2.2启动canal-->
+
+        <!--代码端使用步骤-->
+        <!--1 加入相关依赖 canal.client-->
         <dependency>
             <groupId>com.alibaba.otter</groupId>
             <artifactId>canal.client</artifactId>

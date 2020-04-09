@@ -33,6 +33,7 @@ public class CanalClient {
      */
     public void run() {
 
+        //note4canal:连接信息
         CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("192.168.44.132",
                 11111), "example", "", "");
         int batchSize = 1000;
@@ -198,16 +199,17 @@ public class CanalClient {
 
     /**
      * 入库
+     *
      * @param sql
      */
     public void execute(String sql) {
         Connection con = null;
         try {
-            if(null == sql) return;
+            if (null == sql) return;
             con = dataSource.getConnection();
             QueryRunner qr = new QueryRunner();
             int row = qr.execute(con, sql);
-            System.out.println("update: "+ row);
+            System.out.println("update: " + row);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

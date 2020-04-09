@@ -36,21 +36,21 @@ public class StatisticsDailyServiceImpl extends ServiceImpl<StatisticsDailyMappe
 
         //添加记录之前删除表相同日期的数据
         QueryWrapper<StatisticsDaily> wrapper = new QueryWrapper<>();
-        wrapper.eq("date_calculated",day);
+        wrapper.eq("date_calculated", day);
         baseMapper.delete(wrapper);
 
         //远程调用得到某一天注册人数
         R registerR = ucenterClient.countRegister(day);
-        Integer countRegister = (Integer)registerR.getData().get("countRegister");
+        Integer countRegister = (Integer) registerR.getData().get("countRegister");
 
         //把获取数据添加数据库，统计分析表里面
         StatisticsDaily sta = new StatisticsDaily();
         sta.setRegisterNum(countRegister); //注册人数
         sta.setDateCalculated(day);//统计日期
 
-        sta.setVideoViewNum(RandomUtils.nextInt(100,200));
-        sta.setLoginNum(RandomUtils.nextInt(100,200));
-        sta.setCourseNum(RandomUtils.nextInt(100,200));
+        sta.setVideoViewNum(RandomUtils.nextInt(100, 200));
+        sta.setLoginNum(RandomUtils.nextInt(100, 200));
+        sta.setCourseNum(RandomUtils.nextInt(100, 200));
         baseMapper.insert(sta);
     }
 
@@ -58,9 +58,10 @@ public class StatisticsDailyServiceImpl extends ServiceImpl<StatisticsDailyMappe
     @Override
     public Map<String, Object> getShowData(String type, String begin, String end) {
         //根据条件查询对应数据
+        //note4mp:通过wrapper.select("date_calculated",type);可以查询指定的字段
         QueryWrapper<StatisticsDaily> wrapper = new QueryWrapper<>();
-        wrapper.between("date_calculated",begin,end);
-        wrapper.select("date_calculated",type);
+        wrapper.between("date_calculated", begin, end);
+        wrapper.select("date_calculated", type);
         List<StatisticsDaily> staList = baseMapper.selectList(wrapper);
 
         //因为返回有两部分数据：日期 和 日期对应数量
@@ -89,13 +90,13 @@ public class StatisticsDailyServiceImpl extends ServiceImpl<StatisticsDailyMappe
                     numDataList.add(daily.getCourseNum());
                     break;
                 default:
-                     break;
+                    break;
             }
         }
         //把封装之后两个list集合放到map集合，进行返回
         Map<String, Object> map = new HashMap<>();
-        map.put("date_calculatedList",date_calculatedList);
-        map.put("numDataList",numDataList);
+        map.put("date_calculatedList", date_calculatedList);
+        map.put("numDataList", numDataList);
         return map;
     }
 }
