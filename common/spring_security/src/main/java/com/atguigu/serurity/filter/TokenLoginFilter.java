@@ -40,7 +40,8 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         this.tokenManager = tokenManager;
         this.redisTemplate = redisTemplate;
         this.setPostOnly(false);
-        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login","POST"));
+        //note4security:可以改变 - 设置登录地址
+        this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login", "POST"));
     }
 
     @Override
@@ -58,6 +59,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     /**
      * 登录成功
+     *
      * @param req
      * @param res
      * @param chain
@@ -77,6 +79,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     /**
      * 登录失败
+     *
      * @param request
      * @param response
      * @param e

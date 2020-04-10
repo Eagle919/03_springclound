@@ -17,6 +17,17 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- Spring Security依赖 -->
+        <!--note4security:用户认证授权，本质上就是一个过滤器 filter-->
+        <!--1 引入相关依赖 common_utils spring-boot-starter-security   jjwt-->
+        <!--2 复制整合的代码，因为是固定的但是得看得懂-->
+        <!--3 在service_acl模块里引入security模块-->
+        <!--4 查询用户登录及权限类 com.atguigu.aclservice.service.impl.UserDetailsServiceImpl 并实现UserDetailsService接口 面向接口开发-->
+        <!--过程：
+                   1 输入用户名密码 - 进入com.atguigu.serurity.filter.TokenLoginFilter.attemptAuthentication()方法-->
+               <!--2 执行 com.atguigu.aclservice.service.impl.UserDetailsServiceImpl类去查询用户名及对应的权限-->
+               <!--3 获取返回对象 生成token 返回token 将登录成功的数据放在redis com.atguigu.serurity.filter.TokenLoginFilter.successfulAuthentication()-->
+               <!--4 授权 从header 获取token 信息 在去redis查数据再授权  org.springframework.security.authentication.UsernamePasswordAuthenticationToken-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
