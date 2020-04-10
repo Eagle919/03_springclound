@@ -12,6 +12,12 @@
     <artifactId>service_statistics</artifactId>
 
     <dependencies>
+        <!--note4nacos-config:阿里巴巴的nacos配置中心-->
+        <!--1 导入依赖-->
+        <!--2 在nacos界面新增配置文件-->
+        <!--3 新增.properties文件-->
+        <!--4 名称空间 针对不同环境配置不同配置文件 默认：public -->
+        <!--4.1 新建名称空间 会有名称空间id 在配置列表里多了刚创建的名称空间选项 可以通过克隆来复制文件  选择指定名称空间新增配置文件再在代码里指定名称空间及配置文件id即可-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
