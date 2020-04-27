@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.atguigu.eduservice.mapper.EduCourseMapper">
+<mapper namespace="com.atguigu.gzhservice.mapper.EduCourseMapper">
     <!--note4mp:-->
     <!--resultType表示返回的类型，自己在xml外面定义的实体类-->
     <!--resultMap表示返回的类型，自己在xml里面定义的返回类型  <resultMap id="test" type="String"></resultMap>-->
